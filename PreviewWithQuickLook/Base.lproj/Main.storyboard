@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PreviewWithQuickLook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cdG-Iz-n1g">
+                                <rect key="frame" x="0.0" y="118" width="414" height="778"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hGf-Zd-DMg">
+                                <rect key="frame" x="15" y="59" width="384" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="J4b-Ls-bcH"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Offline"/>
+                                    <segment title="Online"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hGf-Zd-DMg" secondAttribute="trailing" constant="15" id="4CI-w7-Cr7"/>
+                            <constraint firstAttribute="bottom" secondItem="cdG-Iz-n1g" secondAttribute="bottom" id="6PT-Lp-cqN"/>
+                            <constraint firstAttribute="trailing" secondItem="cdG-Iz-n1g" secondAttribute="trailing" id="LKl-rx-yLl"/>
+                            <constraint firstItem="hGf-Zd-DMg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="W1z-2M-SLm"/>
+                            <constraint firstItem="cdG-Iz-n1g" firstAttribute="top" secondItem="hGf-Zd-DMg" secondAttribute="bottom" constant="15" id="Z8k-HZ-nsE"/>
+                            <constraint firstItem="cdG-Iz-n1g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="alG-lG-cpw"/>
+                            <constraint firstItem="hGf-Zd-DMg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="uCO-YQ-y3k"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="changeEnironment" destination="hGf-Zd-DMg" id="D8v-tE-CqI"/>
+                        <outlet property="tblFileList" destination="cdG-Iz-n1g" id="57D-jF-cFF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-250.72463768115944" y="83.705357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
