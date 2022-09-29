@@ -8,7 +8,7 @@
 import UIKit
 import QuickLook
 
-class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSource, QLPreviewControllerDataSource {
+class FilesViewController: UIViewController , UITableViewDelegate, UITableViewDataSource, QLPreviewControllerDataSource {
     
     @IBOutlet weak var changeEnironment: UISegmentedControl!
     @IBOutlet weak var tblFileList: UITableView!
@@ -35,12 +35,17 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         quickLookController.dataSource = self
     }
     
+
     @objc func environmentChanged(_ sender: UISegmentedControl) {
         if changeEnironment.selectedSegmentIndex == 0 {
             self.fileURLs.removeAll()
             self.prepareFileURLs()
             self.tblFileList.reloadData()
         } else if changeEnironment.selectedSegmentIndex == 1 {
+            self.fileURLs.removeAll()
+            self.convertToURL()
+            self.tblFileList.reloadData()
+        } else if changeEnironment.selectedSegmentIndex == 2 {
             self.fileURLs.removeAll()
             self.convertToURL()
             self.tblFileList.reloadData()
@@ -153,10 +158,17 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let quickPreviewController = RRQuickPreviewController()
-        quickPreviewController.url = fileURLs[indexPath.row]
-        quickPreviewController.fileName = fileURLs[indexPath.row].lastPathComponent
-        self.show(quickPreviewController, sender: true)
+        
+        if changeEnironment.selectedSegmentIndex == 2 {
+            let yourVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+            yourVc.docUrl = fileURLs[indexPath.row]
+            self.present(yourVc, animated: true, completion: nil)
+        }else {
+            let quickPreviewController = RRQuickPreviewController()
+            quickPreviewController.url = fileURLs[indexPath.row]
+            quickPreviewController.fileName = fileURLs[indexPath.row].lastPathComponent
+            self.show(quickPreviewController, sender: true)
+        }
     }
     
     func numberOfPreviewItems(in controller: QLPreviewController) -> Int {

@@ -8,26 +8,27 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Files View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PreviewWithQuickLook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FilesViewController" customModule="PreviewWithQuickLook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cdG-Iz-n1g">
-                                <rect key="frame" x="0.0" y="118" width="414" height="778"/>
+                                <rect key="frame" x="0.0" y="109" width="414" height="787"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hGf-Zd-DMg">
-                                <rect key="frame" x="15" y="59" width="384" height="45"/>
+                                <rect key="frame" x="15" y="54" width="384" height="41"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="J4b-Ls-bcH"/>
+                                    <constraint firstAttribute="height" constant="40" id="J4b-Ls-bcH"/>
                                 </constraints>
                                 <segments>
                                     <segment title="Offline"/>
                                     <segment title="Online"/>
+                                    <segment title="WebWiew"/>
                                 </segments>
                             </segmentedControl>
                         </subviews>
@@ -35,9 +36,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hGf-Zd-DMg" secondAttribute="trailing" constant="15" id="4CI-w7-Cr7"/>
+                            <constraint firstItem="hGf-Zd-DMg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="5r0-UP-fmP"/>
                             <constraint firstAttribute="bottom" secondItem="cdG-Iz-n1g" secondAttribute="bottom" id="6PT-Lp-cqN"/>
                             <constraint firstAttribute="trailing" secondItem="cdG-Iz-n1g" secondAttribute="trailing" id="LKl-rx-yLl"/>
-                            <constraint firstItem="hGf-Zd-DMg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="W1z-2M-SLm"/>
                             <constraint firstItem="cdG-Iz-n1g" firstAttribute="top" secondItem="hGf-Zd-DMg" secondAttribute="bottom" constant="15" id="Z8k-HZ-nsE"/>
                             <constraint firstItem="cdG-Iz-n1g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="alG-lG-cpw"/>
                             <constraint firstItem="hGf-Zd-DMg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="uCO-YQ-y3k"/>
@@ -51,6 +52,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-250.72463768115944" y="83.705357142857139"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="uQk-9d-baS">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="pxe-II-0eI" customClass="WebViewController" customModule="PreviewWithQuickLook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n6h-ch-gby">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="wBv-FS-yZ9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IVm-5V-nP3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="459" y="84"/>
         </scene>
     </scenes>
     <resources>
